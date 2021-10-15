@@ -1,0 +1,320 @@
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+   
+  }
+  
+  .sidebar .type a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 30px;
+    
+    color: white;
+    transition: 0.3s;
+  }
+  
+  .column1 .type  a:hover {
+    color: #08193b;
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }
+
+
+
+
+ * {
+    box-sizing:border-box;
+    }
+    
+    .column1 {
+      float: left;
+      width: 100%;
+      padding: 10px;
+       height: 700px;
+    }
+    
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      height:100%;
+    }
+
+
+    .column1 .type {
+      color: white;
+      padding: 50px;
+      font-size: 17px;
+      font-family: 'Stolzl Bold';
+      
+      font-weight: bold;
+    }
+
+    .column1 .type a{
+      color: white;
+      padding: 50px;
+      font-size: 27px;
+      font-family: 'Stolzl Bold';
+      
+      font-weight: bold;
+    }
+
+    
+    
+    @media screen and (max-width: 600px) {
+      .topnav a:not(:first-child) {display: none;}
+      .topnav a.icon {
+        float: right;
+        display: block;
+      }
+    }
+
+
+    input[type=text] {
+        width: 350px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        padding: 12px 12px ;
+      }
+      
+      input[type=text]:focus {
+        width: 100%;
+      }
+
+      #cars{
+        width: 170px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+       
+      }
+
+
+      input[type=submit] {
+        background-color: rgb(202, 26, 79);
+        color: white;
+        cursor: pointer;
+        width: 350px;
+        box-sizing: border-box;
+        border:none;
+        border-radius: 4px;
+        font-size: 16px;
+        padding: 10px 10px ;
+        align-items: center;
+      }
+      .col {
+        float: left;
+        width: 50%;
+        margin: auto;
+        padding: 0 50px;
+        margin-top: 6px;
+      }
+      .hide-md-lg {
+        display: block;
+        text-align: center;
+      }  
+      
+      body{
+        background-color: rgb(46, 44, 44);
+    }
+    .nav
+    {
+        position: absolute;
+        top: 0%;
+        left:0%;
+        background-color: black;
+        height: 58px;
+        width: 100%;
+    }
+    .nav ul
+    {
+        position: absolute;
+        top: 6%;
+        left: 38%;
+       
+    }
+    .nav ul li
+    {
+    list-style-type: none;
+    display: inline;
+    padding: 38px;
+    }
+    .nav ul li a{
+        color:white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .btn
+    {
+        border: 3px solid red;
+        border-radius: 8px;
+        background-color: transparent;
+        position: absolute;
+        left: 91%;
+        top: 21%;
+        color: rgb(5, 5, 5);
+        padding: 6px;
+        width: 83px;
+        font-weight: bold;
+    }
+    .a1
+    {
+        position: absolute;
+top: 19%;
+left: 8%;
+height: 53%;
+width: 55%;
+background-color: rgb(32, 32, 32);
+border-radius: 12px;
+    }
+    .a2
+    {
+        position: absolute;
+top: 19%;
+left: 66%;
+height: 53%;
+width: 28%;
+background-color: rgb(32, 32, 32);
+border-radius: 12px;
+    }
+    .a3
+    {
+        position: absolute;
+top: 74%;
+left: 28%;
+height: 21%;
+width: 35%;
+background-color: rgb(32, 32, 32);
+border-radius: 12px;
+    }
+    .btn1{
+        position: absolute;
+top: 74%;
+left: 8%;
+height: 21%;
+width: 19%;
+background-color: rgb(202, 26, 79);
+border-radius: 12px;
+border: none;
+color: white;
+font-size: 18px;
+    }
+    .btn1:hover
+    {
+        background-color: rgb(190, 49, 190);
+        transform: scale(1.1);
+    }
+    .a2 .w1
+    {
+        position: absolute;
+top: 4%;
+left: 5%;
+height: 14%;
+width: 90%;
+background-color: rgb(26, 25, 25);
+border-radius: 12px;
+
+    }
+    .a2 .w2
+    {
+        position: absolute;
+top: 20%;
+left: 5%;
+height: 14%;
+width: 90%;
+background-color: rgb(26, 25, 25);
+border-radius: 12px;
+
+    }
+    .a2 .w3
+    {
+        position: absolute;
+top: 36%;
+left: 5%;
+height: 14%;
+width: 90%;
+background-color: rgb(26, 25, 25);
+border-radius: 12px;
+
+    }
+    .a2 .w4
+    {
+        position: absolute;
+top: 52%;
+left: 5%;
+height: 14%;
+width: 90%;
+background-color: rgb(26, 25, 25);
+border-radius: 12px;
+
+    }
+    .all .buy
+    {
+      position: absolute;
+      top: 27.5%; 
+      left: 1%;
+     
+      font-size: 19px;
+      background-color:transparent;
+      border: none;
+    }
+    
+    .all .buy a:hover{
+      color: pink;
+    }
+    .all .sell a:hover{
+      color: pink;
+    }
+    .all .sell
+    {
+      position: absolute;
+      top: 25%;
+      left: 20%;
+      
+     
+     
+    }
+    .limit #l1{
+      width: 350px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      padding: 12px 12px ;
+    }
+    #div1
+    {
+     
+    
+     width: 37%;
+     background-color:black;
+
+    }

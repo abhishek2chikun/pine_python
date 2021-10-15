@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/side.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="/screener">Screener and Graph</a></li>
+            <li><a href="/pine">Charts and Pine</a></li>
+           
+            <i class="fa fa-bell" style="font-size:20px;color:red"></i>
+        </ul>
+        
+        <button class="btn" onclick="openNav()"> Trade</button>
+    </div>
+    <div class="d1">
+        <h1>Funds Availale</h1>
+        <p>$4098</p>
+        <h2>Funds Used</h1>
+        <h3>$4098</p>
+    </div>
+    <div class="d2">
+        <h1>Invested Amount</h1>
+        <p>$4098</p>
+        <h2>Profit/Loss</h1>
+        <h3> + 498</p>
+    </div>
+    <div class="d3">
+        <h1>Portfolio Graph</h1>
+    </div>
+    <h1 class="h1">Portfolio</h1>
+    <div class="d4">
+        <h1>Positions</h1>
+        <h2>History</h2>
+        <div class="l1"></div>
+       
+    </div>
+    <div class="d5">
+        <h1>Symbol</h1>
+        <h2>Position</h2>
+        <h3>Last</h3>>
+
+            <h1 style="position: absolute;left: 29%;top: 1%;">Change %</h1>
+        <h2 style="position: absolute;left: 39%;top: 0%;">Cost Basis</h1>
+        <h3 style="position: absolute;left: 49%;top:-1%;">Market Value</h1>
+      
+       
+            <h1 style="position: absolute;left: 61%;top: 1%;">Avg. Price</h1>
+        <h2 style="position: absolute;left: 73%;top: 0%;">Daily P&I</h1>
+        <h3 style="position: absolute;left:85%;top: -1%;">Unrealized P&L</h1>
+        
+    </div>
+    <div class="d6">
+        <h1>Previous Close :</h1>
+        <h2>Current Value :</h1>
+        <h3>Total MTM :</h1>
+    </div>
+
+
+
+    <div id="mySidebar" class="sidebar">
+        
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <div class="flex-container">
+        <div class="row">
+          <div class="column1" style="background-color:#2E2C2C">
+            
+            <div class="type">
+                <p>Enter a Symbol</p>
+                <input type="text" name="search" placeholder="Search..">
+                <br>
+                <br>
+                <br>
+                <br>
+                <div id="lp" style="display:none  ">
+                <p style=" position: absolute;width: 20%;top: 53%;left:67%">Limit Price</p>
+                <input id=l1 type=number style="position: absolute;width: 20%;top: 60%;left:67%">
+               <button onclick="decrement1()" style="position: absolute;width: 8%;top: 60%;left:88%">-</button>
+               <button onclick="increment1()" style="position: absolute;width: 8%;top: 60%;left:57%">+</button>
+            </div>
+            <div id="lp1" style="display:none  ">
+                <p style=" position: absolute;width: 20%;top: 63%;left:67%">Stop Price</p>
+                <input id=l1 type=number style="position: absolute;width: 20%;top: 72%;left:67%">
+               <button onclick="decrement1()" style="position: absolute;width: 8%;top: 72%;left:88%">-</button>
+               <button onclick="increment1()" style="position: absolute;width: 8%;top: 72%;left:57%">+</button>
+            </div>
+               
+                <!-- <pre>BUY   SELL</pre> -->
+                <div class="all">
+                    <h1 class="buy"><a href="#">Buy</a></h1>
+                    <h1 class="sell"><a href="#">Sell</a></h1>
+                </div>
+          
+                <hr style="height:2px;border-width:0;color:gray;background-color:black">
+                <p>Quantity</p>
+                <input id=demoInput type=number id=cars>
+               <button onclick="decrement()">-</button>
+               <button onclick="increment()">+</button>
+                <p>Order Type</p>
+                <div>
+               <button id="b1" onclick="op1();op2();" style="background-color: #2E2C2C;border: 1px solid gray; color: white;" >Order Type</button >
+               <div style="display: none;" id="div1">
+                <button id="b11" onclick="op()" style="width: 100%; background-color: #2E2C2C; border: 1px solid gray; color: white;">Limit</button><br>
+                <button id="b12" style="width: 100%; background-color: #2E2C2C; border: 1px solid gray; color: white;" onclick="op2()">Market</button><br>
+                <button id="b13" style="width: 100%; background-color: #2E2C2C; border: 1px solid gray; color: white;" onclick="op();op4();">Stop</button><br>
+                <button id="b14" style="width: 100%; background-color: #2E2C2C; border: 1px solid gray; color: white;" onclick="op4();op2();">Stop Limit</button><br>
+                <button id="b15" style="width: 100%; background-color: #2E2C2C; border: 1px solid gray; color: white;" onclick="op2();op5()">Market on Close</button><br>
+                <button id="b16" style="width: 100%; background-color: #2E2C2C; border: 1px solid gray; color: white;" onclick="op();op5()">Limit On Close</button><br>
+               </div>
+               
+            </div>
+                  <!-- <div class="d6"> -->
+                  <div class="col">
+                    <div class="hide-md-lg">
+                        <div class="box">
+
+                  <input type="submit" value="Place an Order" style="position: absolute;left: 7%;top: 94%;" onclick="op()">
+                  </div>
+                </div>
+                  </div>
+                </div>
+
+          </div>
+          </div>
+          
+        </div>
+      </div>
+        </div>
+      </div>
+    
+      
+      
+      
+        
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "35%";
+            document.getElementById("main").style.marginRight = "35%";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginRight= "0";
+          }
+        
+        
+    </script>
+    <script>
+        function increment() {
+           document.getElementById('demoInput').stepUp();
+        }
+        function decrement() {
+           document.getElementById('demoInput').stepDown();
+        }
+        function increment1() {
+           document.getElementById('l1').stepUp();
+        }
+        function decrement1() {
+           document.getElementById('l1').stepDown();
+        }
+
+        function op() {
+     document.getElementById("lp").style.display="block";
+    }
+    function op4() {
+     document.getElementById("lp1").style.display="block";
+    }
+    function op5() {
+     document.getElementById("lp1").style.display="none";
+    }
+    function op2() {
+     document.getElementById("lp").style.display="none";
+     
+    }
+    function op1() {
+
+     document.getElementById("div1").style.display="block";
+    }
+   
+     </script>
+</body>
+</html>

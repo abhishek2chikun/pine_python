@@ -1,0 +1,26 @@
+
+//@version=4
+study(title="Stochastic RSI", format=format.price, precision=2, resolution="")
+smoothK = input(3, "K", minval=1)
+smoothD = input(3, "D", minval=1)
+lengthRSI = input(108, "RSI Length", minval=1)
+lengthStoch = input(108, "Stochastic Length", minval=1)
+src = input(close, title="RSI Source")
+rsi1 = rsi(src, lengthRSI)
+k = sma(stoch(rsi1, rsi1, rsi1, lengthStoch), smoothK)
+d = sma(k, smoothD)
+plot(k, "K", color=#0094FF)
+plot(d, "D", color=#FF6A00)
+h0 = hline(80, "Upper Band", color=#606060)
+h1 = hline(20, "Lower Band", color=#606060)
+fill(h0, h1, color=#9915FF, transp=85, title="Background")
+hline(0, "Lower Band", color=#606060)
+hline(100, "Lower Band", color=#606060)
+hline(50, "Lower Band", color=#606060)
+
+a7 = k == 0
+plotshape(a7,title="blanco 1", color = color.lime, style=shape.circle, location=location.bottom, transp=0, size=size.tiny, text="0")
+a8 = k == 100
+plotshape(a8,title="blanco 1", color = color.red, style=shape.circle, location=location.bottom, transp=0, size=size.tiny, text="100")
+alertcondition(a7,title="Compra", message='Compra')
+alertcondition(a8,title="Venta", message='Venta')

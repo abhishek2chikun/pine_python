@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=Q, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="side.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/side.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        
+
+
+    
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/screener">Screener and Graph</a></li>
+            <li><a href="#">Charts and Pine</a></li>
+           
+        </ul>
+        <i class="fa fa-bell" style="font-size:24px"></i>
+        <button class="btn" onclick="openNav()"> Trade</button>
+   
+    </div>
+    <h1 style="position: absolute;
+    left: 5%;
+    top: 9%;
+    font-size:20px;color: white;">Trading View</h1>
+    <div class="a1">
+   
+    </div>
+    <div class="a1"></div>
+
+    <h2 style="position: absolute;
+    left: 70%;
+    top: 9%;
+    font-size: 20px;
+    color: white;">Alerts</h2>
+    <div class="a2">
+        <div class="w1"></div>
+        <div class="w2"></div>
+        <div class="w3"></div>
+        <div class="w4"></div>
+    </div>  
+    <button class="btn1">Pine script</button>
+    <div class="a3" color:white> Python Script </div> 
+    <div id="mySidebar" class="sidebar">
+        
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <div class="flex-container">
+        <div class="row">
+          <div class="column1" style="background-color:#2E2C2C">
+            
+            <div class="type">
+                <p>Enter a Symbol</p>
+                <input type="text" name="search" placeholder="Search..">
+                <br>
+                <br>
+                <br>
+                <br>
+                <div id="lp" style="display:none  ">
+                <p style=" position: absolute;width: 20%;top: 53%;left:67%">Limit Price</p>
+                <input id=l1 type=number style="position: absolute;width: 20%;top: 60%;left:67%">
+               <button onclick="decrement1()" style="position: absolute;width: 8%;top: 60%;left:88%">-</button>
+               <button onclick="increment1()" style="position: absolute;width: 8%;top: 60%;left:57%">+</button>
+            </div>
+            <div id="lp1" style="display:none  ">
+                <p style=" position: absolute;width: 20%;top: 63%;left:67%">Stop Price</p>
+                <input id=l1 type=number style="position: absolute;width: 20%;top: 72%;left:67%">
+               <button onclick="decrement1()" style="position: absolute;width: 8%;top: 72%;left:88%">-</button>
+               <button onclick="increment1()" style="position: absolute;width: 8%;top: 72%;left:57%">+</button>
+            </div>
+               
+                <!-- <pre>BUY   SELL</pre> -->
+                <div class="all">
+                    <h1 class="buy"><a href="#">Buy</a></h1>
+                    <h1 class="sell"><a href="#">Sell</a></h1>
+                </div>
+          
+                <hr style="height:2px;border-width:0;color:gray;background-color:black">
+                <p>Quantity</p>
+                <input id=demoInput type=number id=cars>
+               <button onclick="decrement()">-</button>
+               <button onclick="increment()">+</button>
+                <p>Order Type</p>
+                <div>
+               <button id="b1" onclick="op1();op2();" style="background-color: #2E2C2C;border: 1px solid gray; color: white;" >Order Type</button >
+               <div style="display: none;" id="div1">
+                <button id="b11" onclick="op()" style="width: 100%; background-color: #2E2C2C; border: 1px solid gray; color: white;">Limit</button><br>
+                <button id="b12" style="width: 100%; background-color: #2E2C2C; border: 1px solid gray; color: white;" onclick="op2()">Market</button><br>
+                <button id="b13" style="width: 100%; background-color: #2E2C2C; border: 1px solid gray; color: white;" onclick="op();op4();">Stop</button><br>
+                <button id="b14" style="width: 100%; background-color: #2E2C2C; border: 1px solid gray; color: white;" onclick="op4();op2();">Stop Limit</button><br>
+                <button id="b15" style="width: 100%; background-color: #2E2C2C; border: 1px solid gray; color: white;" onclick="op2();op5()">Market on Close</button><br>
+                <button id="b16" style="width: 100%; background-color: #2E2C2C; border: 1px solid gray; color: white;" onclick="op();op5()">Limit On Close</button><br>
+               </div>
+               
+            </div>
+                  <!-- <div class="d6"> -->
+                  <div class="col">
+                    <div class="hide-md-lg">
+                        <div class="box">
+
+                  <input type="submit" value="Place an Order" style="position: absolute;left: 7%;top: 94%;" onclick="op()">
+                  </div>
+                </div>
+                  </div>
+                </div>
+
+          </div>
+          </div>
+          
+        </div>
+      </div>
+        </div>
+      </div>
+    
+      
+      
+      
+        
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "35%";
+            document.getElementById("main").style.marginRight = "35%";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginRight= "0";
+          }
+        
+        
+    </script>
+    <script>
+        function increment() {
+           document.getElementById('demoInput').stepUp();
+        }
+        function decrement() {
+           document.getElementById('demoInput').stepDown();
+        }
+        function increment1() {
+           document.getElementById('l1').stepUp();
+        }
+        function decrement1() {
+           document.getElementById('l1').stepDown();
+        }
+
+        function op() {
+     document.getElementById("lp").style.display="block";
+    }
+    function op4() {
+     document.getElementById("lp1").style.display="block";
+    }
+    function op5() {
+     document.getElementById("lp1").style.display="none";
+    }
+    function op2() {
+     document.getElementById("lp").style.display="none";
+     
+    }
+    function op1() {
+
+     document.getElementById("div1").style.display="block";
+    }
+   
+     </script>
+
+</body>
+</html>

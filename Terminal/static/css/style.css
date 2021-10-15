@@ -1,0 +1,249 @@
+
+        body{
+            background-color: rgb(46, 44, 44);
+        }
+        .nav
+        {
+            position: absolute;
+            top: 0%;
+            left:0%;
+            background-color: black;
+            height: 58px;
+            width: 100%;
+        }
+        .nav ul
+        {
+            position: absolute;
+            top: 6%;
+            left: 38%;
+           
+        }
+        .nav ul li
+        {
+        list-style-type: none;
+        display: inline;
+        padding: 38px;
+        }
+        .nav ul li a{
+            color:white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .btn
+        {
+            border: 3px solid red;
+            border-radius: 8px;
+            background-color: transparent;
+            position: absolute;
+            left: 91%;
+            top: 21%;
+            color: white;
+            padding: 6px;
+            width: 83px;
+            font-weight: bold;
+        }
+        .d1
+        {
+            position: absolute;
+            top: 13%;
+            left: 8%;
+            height: 25%;
+            width: 18%;
+            background-color: rgb(32, 32, 32);
+            border-radius: 10px;
+        }
+        .d2
+        {
+            position: absolute;
+            top: 13%;
+            left: 27%;
+            height: 25%;
+            width: 18%;
+            background-color: rgb(32, 32, 32);
+            border-radius: 10px;
+        }
+        .d3
+        {
+            position: absolute;
+    top: 13%;
+    left: 46%;
+    height: 25%;
+    width: 48%;
+    background-color: rgb(32, 32, 32);
+    border-radius: 10px;
+        }
+        .d4
+        {
+            position: absolute;
+    top: 44%;
+    left: 7%;
+    height: 8%;
+    width: 87%;
+    background-color: rgb(32, 32, 32);
+    border-radius: 10px;
+        }
+        .d5
+        {
+            position: absolute;
+    top: 53%;
+    left: 7%;
+    height: 34%;
+    width: 87%;
+    background-color: rgb(32, 32, 32);
+    border-radius: 10px;
+        }
+        .d6
+        {
+            position: absolute;
+    top: 88%;
+    left: 7%;
+    height: 8%;
+    width: 87%;
+    background-color: rgb(32, 32, 32);
+    border-radius: 10px;
+        }
+        .d1 h1{
+            position: absolute;
+    top: 0%;
+    left: 10%;
+    color: white;
+    font-size: 19px;
+        }
+        .d1 p{
+            position: absolute;
+    top: 14%;
+    left: 10%;
+    color:  rgb(224, 33, 65);
+    font-size: 19px;
+        }
+        .d1 h2{
+            position: absolute;
+    top: 32%;
+    left: 10%;
+    color: white;
+    font-size: 19px;
+        }
+        .d1 h3{
+            position: absolute;
+    top: 46%;
+    left: 10%;
+    color:  rgb(224, 33, 65);
+    font-size: 19px;
+        }
+        .d2 h1{
+            position: absolute;
+    top: 0%;
+    left: 10%;
+    color: white;
+    font-size: 19px;
+        }
+        .d2 p{
+            position: absolute;
+    top: 14%;
+    left: 10%;
+    color: rgb(224, 33, 65);
+    font-size: 19px;
+        }
+        .d2 h2{
+            position: absolute;
+    top: 32%;
+    left: 10%;
+    color: white;
+    font-size: 19px;
+        }
+        .d2 h3{
+            position: absolute;
+    top: 46%;
+    left: 10%;
+    color: rgb(23, 180, 62);
+    font-size: 19px;
+        }
+        .d3 h1{
+            position: absolute;
+    top: 0%;
+    left: 6%;
+    color: white;
+    font-size: 19px;
+        }
+        .h1{
+            position: absolute;
+            top: 37%;
+            left: 8%;
+            color: white;
+            font-size: 24px;
+        }
+        .d4 h1{
+            position: absolute;
+    top: 0%;
+    left: 3%;
+    color: white;
+    font-size: 19px;
+        }
+        .d4 h2{
+            position: absolute;
+    top: 0%;
+    left: 14%;
+    color: white;
+    font-size: 17px;
+        }
+        .l1
+        {
+            background-color: rgb(224, 33, 65);
+    position: absolute;
+    left: 2%;
+    top: 63%;
+    height: 2px;
+    width: 89px;
+    border-radius: 12px;
+
+
+        }
+        .d6 h1{
+            position: absolute;
+    top: 14%;
+    left: 3%;
+    color: white;
+    font-size: 17px;
+        }
+        .d6 h2{
+            position: absolute;
+    top: 14%;
+    left: 39%;
+    color: white;
+    font-size: 17px;
+        }
+        .d6 h3{
+            position: absolute;
+    top: 3%;
+    left: 79%;
+    color: white;
+    font-size: 17px;
+        }
+
+
+        .d5 h1{
+            position: absolute;
+    top: 2%;
+    left: 3%;
+    color: white;
+    font-size: 17px;
+        }
+        .d5 h2{
+            position: absolute;
+    top: 0%;
+    left: 12%;
+    color: white;
+    font-size: 17px;
+        }
+        .d5 h3{
+            position: absolute;
+    top: -1%;
+    left: 22%;
+    color: white;
+    font-size: 17px;
+        }
+        .p1{
+            position: absolute;
+            top: 30%;
+            left: 30%;
+        }

@@ -1,0 +1,145 @@
+{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "Currency",
+      "Value:": "BASE",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "CashBalance",
+      "Value:": "1037875.11",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "TotalCashBalance",
+      "Value:": "1037875.11",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "AccruedCash",
+      "Value:": "0.00",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "StockMarketValue",
+      "Value:": "0.00",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "OptionMarketValue",
+      "Value:": "0.00",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "FutureOptionValue",
+      "Value:": "0.00",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "FuturesPNL",
+      "Value:": "0.00",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "NetLiquidationByCurrency",
+      "Value:": "1037875.11",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "UnrealizedPnL",
+      "Value:": "0.00",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "RealizedPnL",
+      "Value:": "0.00",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "ExchangeRate",
+      "Value:": "1.00",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "FundValue",
+      "Value:": "0.00",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "NetDividend",
+      "Value:": "0.00",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "MutualFundValue",
+      "Value:": "0.00",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "MoneyMarketFundValue",
+      "Value:": "0.00",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "CorporateBondValue",
+      "Value:": "0.00",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "TBondValue",
+      "Value:": "0.00",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "TBillValue",
+      "Value:": "0.00",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "WarrantValue",
+      "Value:": "0.00",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "FxCashBalance",
+      "Value:": "0.00",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "AccountOrGroup",
+      "Value:": "DU228380",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "RealCurrency",
+      "Value:": "USD",
+      "Currency:": "BASE"
+}{
+      "AccountSummary. ReqId:": 9002,
+      "Account:": "DU228380",
+      "Tag: ": "IssuerOptionValue",
+      "Value:": "0.00",
+      "Currency:": "BASE"
+}
