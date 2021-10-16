@@ -1,7 +1,7 @@
 import streamlit as st
 from multiapp import MultiApp
-from apps import Graph, Screener # import your app modules here
-
+from apps import Graph, Screener, Trade, Portfolio,Pine # import your app modules here
+st.set_page_config(layout="wide")
 app = MultiApp()
 
 # st.markdown("""
@@ -12,5 +12,8 @@ app = MultiApp()
 # Add all your application here
 app.add_app("Graph", Graph.app)
 app.add_app("Screener", Screener.app)
+app.add_app("Portfolio",Portfolio.app)
+app.add_app("Pine to Python",Pine.app)
+app.add_app("Trade",Trade.app)
 # The main app
 app.run()

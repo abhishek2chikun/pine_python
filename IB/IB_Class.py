@@ -1,15 +1,19 @@
+from pandas.core.frame import DataFrame
+from pandas.io.parsers import read_csv
 from ibapi.client import EClient
 from ibapi.wrapper import EWrapper
 from ibapi.contract import Contract
 from ibapi.order import Order
+
 import threading
 import json
 import time
 import os
-
+import pandas as pd
 class IBapi(EWrapper, EClient):
     def __init__(self):
         EClient.__init__(self, self)
+        self.i =0
 
     def nextValidId(self, orderId: int):
         super().nextValidId(orderId)
@@ -28,55 +32,64 @@ class IBapi(EWrapper, EClient):
     def pnlSingle(self, reqId: int, pos: int, dailyPnL: float,
                     unrealizedPnL: float, realizedPnL: float, value: float):
         super().pnlSingle(reqId, pos, dailyPnL, unrealizedPnL, realizedPnL, value)
-        print("Daily PnL Single. ReqId:", reqId, "Position:", pos,
-                "DailyPnL:", dailyPnL, "UnrealizedPnL:", unrealizedPnL,
-                "RealizedPnL:", realizedPnL, "Value:", value)
-        pnl = {"Daily PnL Single. ReqId:": reqId, "Position:": pos,
-                "DailyPnL:": dailyPnL, "UnrealizedPnL:": unrealizedPnL,
-                "RealizedPnL:": realizedPnL, "Value:": value}
         
-        with open('./pnl.json','a') as file:
-            json.dump(pnl,file,indent=6)
+        
+        if not os.path.exists('./pnl.csv'):
+            df = pd.DataFrame(columns=["ReqId", "Position","DailyPnL", "UnrealizedPnL","RealizedPnL", "Value"])
+            
+            df.to_csv('./pnl.csv')
+        else:
+            df = pd.read_csv('./pnl.csv',index_col=[0])
+            df.loc[len(df.index)] = [reqId,pos,dailyPnL, unrealizedPnL,realizedPnL,value]
+            df.to_csv('./pnl.csv')
 
     
     def pnl(self, reqId: int, dailyPnL: float,
                 unrealizedPnL: float, realizedPnL: float):
         super().pnl(reqId, dailyPnL, unrealizedPnL, realizedPnL)
         
-        print("Daily PnL. ReqId:", reqId, "DailyPnL:", dailyPnL,
-                "UnrealizedPnL:", unrealizedPnL, "RealizedPnL:", realizedPnL)
-        pnl = {"Daily PnL. ReqId:": reqId, "DailyPnL:": dailyPnL,
-                 "UnrealizedPnL:": unrealizedPnL, "RealizedPnL:": realizedPnL}
-        
-        with open('./pnl.json','a') as file:
-            json.dump(pnl,file,indent=6)
+        if not os.path.exists('./pnl.csv'):
+            df = pd.DataFrame(columns=["ReqId", "DailyPnL","UnrealizedPnL", "RealizedPnL"])
+            
+            df.to_csv('./pnl.csv')
+        else:
+            df = pd.read_csv('./pnl.csv',index_col=[0])
+            df.loc[len(df.index)] = [reqId, dailyPnL, unrealizedPnL,realizedPnL]
+            df.to_csv('./pnl.csv')
+
 
     def position(self, account: str, contract: Contract, position: float,
                     avgCost: float):
         super().position(account, contract, position, avgCost)
-        # print("Position.", "Account:", account, "Symbol:", contract.symbol, "SecType:",
-        #     contract.secType, "Currency:", contract.currency,
-        #     "Position:", position, "Avg cost:", avgCost)
         
-        position = { "Account:": account, "Symbol:": contract.symbol, "SecType:":
-            contract.secType, "Currency:": contract.currency,
-            "Position:": position, "Avg cost:": avgCost}
+        if not os.path.exists('./position.csv'):
+            df = pd.DataFrame(columns=["Account", "Symbol", "SecType", "Currency","Position" , "Avg cost"])
+            
+            df.to_csv('./position.csv')
+        else:
+            df = pd.read_csv('./position.csv',index_col=[0])
+            df.loc[len(df.index)] = [ account, contract.symbol,
+            contract.secType,contract.currency,position, avgCost]
+            df.to_csv('./position.csv')
         
-        with open('./position.json','a') as file:
-            json.dump(position,file,indent=6)
-        
-
+    
     def accountSummary(self, reqId: int, account: str, tag: str, value: str,
                         currency: str):
-        super().accountSummary(reqId, account, tag, value, currency)
-        # print("AccountSummary. ReqId:", reqId, "Account:", account,
-        #        "Tag: ", tag, "Value:", value, "Currency:", currency)
         
-        account_summary = {"AccountSummary. ReqId:":reqId, "Account:": account,
-               "Tag: ": tag, "Value:": value, "Currency:": currency}
-
-        with open('./account_summary.json','a') as file:
-            json.dump(account_summary,file,indent=6)
+        super().accountSummary(reqId, account, tag, value, currency)
+        
+        
+        if not os.path.exists('./acc_summary.csv'):
+            df = pd.DataFrame(columns=["ReqId", "Account","Tag", "Value", "Currency"])
+            
+            df.to_csv('./acc_summary.csv')
+        else:
+            df = pd.read_csv('./acc_summary.csv',index_col=[0])
+            df.loc[len(df.index)] = [reqId,account,tag,value,currency]
+            df.to_csv('./acc_summary.csv')
+        
+        
+        
 
 
 
@@ -84,7 +97,7 @@ class IBapi(EWrapper, EClient):
 class Client:
     def __init__(self) -> None:
         self.app = IBapi()
-        self.app.connect('127.0.0.1', 7497, 1)
+        self.app.connect('127.0.0.1', 7497, 2)
         api_thread = threading.Thread(target=self.run_loop, daemon=True)
         api_thread.start()
     
@@ -97,7 +110,6 @@ class Client:
         contract.secType = 'STK'
         contract.exchange = 'SMART'
         contract.currency = 'USD'
-        print("Symbol----")
         return contract
     
     def Place_order(self,Type,Quantity,OrderType,LimitPrice,Symbol):
@@ -125,29 +137,31 @@ class Client:
 
 
     def Account_details(self):
-        if os.path.exists('./account_summary.json'):
-            os.remove('./account_summary.json')
+        if os.path.exists('./acc_summary.csv'):
+            os.remove('./acc_summary.csv')
         self.app.reqAccountSummary(9002, "All", "$LEDGER")
         
 
     def Position(self):
-        if os.path.exists('./position.json'):
-            os.remove('./position.json')
+        if os.path.exists('./position.csv'):
+            os.remove('./position.csv')
         self.app.reqPositions()
 
     def PNL(self):
-        if os.path.exists('./pnl.json'):
-            os.remove('./pnl.json')
-        self.app.reqPnL(1, "DU228385", "")
+        if os.path.exists('./pnl.csv'):
+            os.remove('./pnl.csv')
+        self.app.reqPnL(1, "DU229334", "")
     
     def Close(self):
         self.app.disconnect()
 
 obj = Client()
 obj.Place_order("SELL",2000,"MKT","1.10","APPL")
-
+time.sleep(5)
 obj.Account_details()
+time.sleep(5)
 obj.Position()
+time.sleep(5)
 obj.PNL()
 time.sleep(5)
 obj.Close()

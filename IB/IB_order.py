@@ -59,13 +59,13 @@ def Place_order(Type,Quantity,OrderType,LimitPrice,Symbol):
     def OTC_order(symbol):
         contract = Contract()
         contract.symbol = symbol
-        contract.secType = 'STK'
+        contract.secType = 'CASh'
         contract.exchange = 'SMART'
         contract.currency = 'USD'
         return contract
 
     app = IBapi()
-    app.connect('127.0.0.1', 7497, 122)
+    app.connect('127.0.0.1', 7497, 22)
 
     app.nextorderId = None
 
@@ -95,14 +95,14 @@ def Place_order(Type,Quantity,OrderType,LimitPrice,Symbol):
     #app.nextorderId += 1
 
     #time.sleep(3)
-    #app.reqPnL(17001, "DU228385", "")
+    app.reqPnL(17001, "DU228385", "")
     #app.reqPositions()
-    app.reqAccountSummary(9002, "All", "$LEDGER")
+    #app.reqAccountSummary(9002, "All", "$LEDGER")
     #Cancel order 
     # print('cancelling order')
     # app.cancelOrder(app.nextorderId)
 
-    #time.sleep(3)
+    time.sleep(3)
     app.disconnect()
 
 Place_order("SELL",2000,"MKT","1.10","USD")

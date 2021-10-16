@@ -7,7 +7,7 @@ import os
 import datetime
 import time
 import streamlit.components.v1 as components
-st.set_page_config(layout="wide")
+
 def app():
 
     #alert = pd.read_csv('./alert.csv')
@@ -18,7 +18,7 @@ def app():
 
     files = glob.glob(path+'/OTC_data/*')
     files_list = []
-    print(files)
+    print("Files:",files)
 
     for i in files:
         files_list.append(datetime.datetime.strptime(os.path.basename(i).split('.csv')[0].replace('_',':'), '%Y-%m-%d %X'))
